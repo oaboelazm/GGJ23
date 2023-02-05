@@ -15,7 +15,7 @@ public class DailogSystem : MonoBehaviour
     
     void Start()
     {
-        panelAnim = Panel.GetComponent<Animator>();
+        //panelAnim = Panel.GetComponent<Animator>();
 
     }
 
@@ -23,17 +23,26 @@ public class DailogSystem : MonoBehaviour
     {
       if (IsDialog && Input.GetKeyDown(KeyCode.Space))
       {
-	    panelAnim?.SetBool("Show", false);
-    	panelAnim?.SetBool("Hide", true);
-      IsDialog = false;
-      }
-      
+            //panelAnim?.SetBool("Show", false);
+            //panelAnim?.SetBool("Hide", true);
+            IsDialog = false;
+            Text.text = "";
+        }
+        if (!IsDialog)
+        {
+            Panel.gameObject.SetActive(false);
+        }
+        else
+        {
+            Panel.gameObject.SetActive(true);
+        }
+
     }
 
     public void MakeDailog(string Sentence)
     {
-    	panelAnim?.SetBool("Show", true);
-    	panelAnim?.SetBool("Hide", false);
+    	//panelAnim?.SetBool("Show", true);
+    	//panelAnim?.SetBool("Hide", false);
     	StartCoroutine(Type(Sentence));
 	IsDialog = true;
     }
