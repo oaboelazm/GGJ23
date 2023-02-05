@@ -116,8 +116,6 @@ public class LevelManager : MonoBehaviour
             lastSeconds = seconds;
            //Debug.Log(string.Format("{0:00}:{1:00}", minutes, seconds));
         }
-
-        
     }
 
     /*******************************************************************
