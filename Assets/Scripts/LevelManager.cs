@@ -12,8 +12,8 @@ public class LevelManager : MonoBehaviour
     float timer;
     float minutes;
     float seconds;
-    float lastMinutes;
-    float lastSeconds;
+    public float lastMinutes;
+    public float lastSeconds;
 
     /*******************************************************************
                            Gameplay events handlered                      
@@ -102,7 +102,7 @@ public class LevelManager : MonoBehaviour
         {
             lastMinutes = minutes;
             lastSeconds = seconds;
-            Debug.Log(string.Format("{0:00}:{1:00}", minutes, seconds));
+           //Debug.Log(string.Format("{0:00}:{1:00}", minutes, seconds));
         }
     }
 

@@ -38,6 +38,9 @@ public class CanvasManager : MonoBehaviour
     int DlogEnemiesSpawned = 1;
     int DLogEnemyKilled = 3;
     int DlogEnoughSeeds = 4;
+
+
+    public TextMeshProUGUI Timer;
     void Start()
     {
         LevelManagerObject = GameObject.Find("LevelManagerObject");
@@ -82,7 +85,7 @@ public class CanvasManager : MonoBehaviour
 
     void Update()
     {
-
+        Timer.text= string.Format("{0:00}:{1:00}", LevelManagerScript.lastMinutes, LevelManagerScript.lastSeconds);
     }
     public void CanvasUpdateSeed(object sender, EventArgs e)
     {
