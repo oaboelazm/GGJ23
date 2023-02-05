@@ -19,10 +19,13 @@ public class LevelManager : MonoBehaviour
                            Gameplay events handlered                      
     *******************************************************************/
 
-    int score;
+    public int score;
     int difficultyLevel;
-    int seedNumber;
-    int treeNum;
+    public int seedNumber;
+    public int treeNum;
+
+
+
 
     [SerializeField] int treeMultiplier = 1;
     [SerializeField] int enemyMultiplier = 1;
@@ -30,28 +33,33 @@ public class LevelManager : MonoBehaviour
 
     public static event EventHandler onEndLevel;
     public static event EventHandler<onScoreChangedArgs> onScoreChanged;
-    public class onScoreChangedArgs : EventArgs
-    {
-        public int eScore;
-    }
+    public class onScoreChangedArgs : EventArgs { public int eScore; }
 
-    public static event EventHandler onTreeSpawned;
-    public static event EventHandler onTreeKilled;
+    public static event EventHandler<onTreeDamagedArgs> onTreeSpawned;
+    public static event EventHandler<onTreeDamagedArgs> onTreeKilled;
     public static event EventHandler onEnemyKilled;
     public static event EventHandler onDifficltyLevelChange;
     public static event EventHandler onSeedsObtained;
     public static event EventHandler onHavingEnoughSeeds;
+    public static event EventHandler<onTreeDamagedArgs> onTreeAttacked;
+    public class onTreeDamagedArgs : EventArgs { public int treeIndex; }
+    [SerializeField] public int[] treesHealth;
+    public int MaxHealthOfTrees;
+    
+    
 
     void Awake()
     {
+        treesHealth = new int[] { MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees };
         onEndLevel += Level_Restart;
         onScoreChanged += changeScore;
         onDifficltyLevelChange += incDiffLevel;
         onSeedsObtained+= incSeeds;
         onHavingEnoughSeeds+= showDialog;
-        onTreeSpawned+= (object sender, EventArgs e) => treeNum++;
-        onTreeKilled+= (object sender, EventArgs e) => treeNum--;
+        onTreeSpawned+= PlantTree;
+        onTreeKilled+= KillTree;
         onEnemyKilled+= computeScore;
+        onTreeAttacked+= dicDamage;
     }
 
 
@@ -111,7 +119,7 @@ public class LevelManager : MonoBehaviour
     /*******************************************************************
                            Scene Methods                        
     *******************************************************************/
-    private void Level_Restart(object sender, System.EventArgs e)
+    public void Level_Restart(object sender, System.EventArgs e)
     {
         SceneManager.LoadScene(0);
     }
@@ -139,12 +147,31 @@ public class LevelManager : MonoBehaviour
 
     private void showDialog(object sender, EventArgs e)
     {
-        int x = 0;
+        return;
         //TODO show dialog 
     }
     private void computeScore(object sender, EventArgs e)
     {
         score += (seedMutiplier*seedNumber) + (treeNum*treeMultiplier) + (enemyMultiplier);
         onScoreChanged?.Invoke(this, new onScoreChangedArgs { eScore = this.score });
+    }
+
+    private void dicDamage(object sender, onTreeDamagedArgs e)
+    {
+        treesHealth[e.treeIndex]=treesHealth[e.treeIndex]-1;
+        if(treesHealth[e.treeIndex]<=0) {}
+    }
+    public void restart_level_public()
+    {
+        onEndLevel.Invoke(this,new EventArgs());
+    }
+    public void KillTree(object sender, onTreeDamagedArgs e)
+    {
+        treeNum--;
+    }
+    public void PlantTree(object sender, onTreeDamagedArgs e)
+    {
+        treesHealth[e.treeIndex]=MaxHealthOfTrees;
+        treeNum++;
     }
 }
