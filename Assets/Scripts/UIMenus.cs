@@ -5,6 +5,7 @@ using TMPro;
 
 public class UIMenus : MonoBehaviour
 {
+    
    public void ChangeToScene(string sceneToChangeTo) 
     {
 		Application.LoadLevel(sceneToChangeTo);

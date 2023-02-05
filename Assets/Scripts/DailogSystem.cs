@@ -7,52 +7,41 @@ using TMPro;
 public class DailogSystem : MonoBehaviour
 {
 	public TextMeshProUGUI Text;
-	public string[] Sentences;
 	public float typingSpeed;
-	private int _index;
-
-	public GameObject Panel;
-
-	public GameObject Btn;
-
+	public GameObject Panel; // dialog place holder
 	Animator panelAnim;
-    // Start is called before the first frame update
+
+	bool IsDialog = false;
+    
     void Start()
     {
         panelAnim = Panel.GetComponent<Animator>();
 
-        MakeDailog(0);
     }
 
-    // Update is called once per frame
     void Update()
     {
-    	if(Text.text == Sentences[_index]){
-    		Btn.SetActive(true);
-    	}
-      
+      if (IsDialog && Input.GetKeyDown(KeyCode.Space))
+      {
+	panelAnim.SetBool("Show", false);
+    	panelAnim.SetBool("Hide", true);
+      }
     }
 
-    public void MakeDailog(int indexOfSen)
+    public void MakeDailog(string Sentence)
     {
     	panelAnim.SetBool("Show", true);
     	panelAnim.SetBool("Hide", false);
-    	StartCoroutine(Type(indexOfSen));
+    	StartCoroutine(Type(Sentence));
+	IsDialog = true;
     }
 
-    IEnumerator Type(int index){
-    	_index = index;
-    	foreach(char letter in Sentences[index].ToCharArray()){
+    IEnumerator Type(string Sentence){
+    	
+    	foreach(char letter in Sentence.ToCharArray()){
     		Text.text += letter;
     		yield return new WaitForSeconds(typingSpeed);
     	}
-    }
-
-    public void OK(){
-    	Btn.SetActive(false);
-    	Text.text = "";
-    	panelAnim.SetBool("Show", false);
-    	panelAnim.SetBool("Hide", true);
     }
 
 }
