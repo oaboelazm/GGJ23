@@ -15,6 +15,11 @@ public class EnemyMovement : MonoBehaviour
     public float hp = 5f;
     public float damageRate = 0.5f;
     public GameObject seedPrefab;
+    Rigidbody2D rb;
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     void Update()
     {
 
@@ -27,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
 
         GameObject x = FindNearest(trees);
         if((x.transform.position - transform.position).sqrMagnitude > TreeDamageRadius) { 
-            transform.position = Vector2.MoveTowards(transform.position, x.transform.position, MovingSpeed * Time.deltaTime);
+            rb.MovePosition(Vector2.MoveTowards(transform.position, x.transform.position, MovingSpeed * Time.deltaTime));
         }
         else
         {
