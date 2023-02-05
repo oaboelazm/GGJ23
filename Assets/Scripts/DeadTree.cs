@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class DeadTree : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int treeIndex;
+    public Sprite[] treeSprites;
+    public bool isSeeded = false;
     void Start()
     {
-        
+        GetComponent<SpriteRenderer>().sprite = treeSprites[treeIndex];
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void plantSeed()
     {
-        
+        isSeeded = true;
+        Debug.Log("Tree Is Seeded");
     }
 }
