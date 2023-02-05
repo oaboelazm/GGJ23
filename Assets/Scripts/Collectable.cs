@@ -17,7 +17,8 @@ public class Collectable : MonoBehaviour
     if (other.tag == "Player")
     {
         Player.GetComponent<PlayerInv>().AddItem(KindOfOBJ.ToString());
-    }
+        notifyLevelManagerSeeds();
+        }
    }
     
     public enum Kind
@@ -25,4 +26,10 @@ public class Collectable : MonoBehaviour
         Seeds,
         PowerUp,
     }
+    public void notifyLevelManagerSeeds()
+    {
+        GameObject LevelManagerObject = GameObject.Find("LevelManagerObject");
+        LevelManagerObject.GetComponent<LevelManager>().notifySeedOptained();
+    }
 }
+

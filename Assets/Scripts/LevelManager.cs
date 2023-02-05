@@ -55,6 +55,7 @@ public class LevelManager : MonoBehaviour
     void Awake()
     {
         treesHealth = new int[] { MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees };
+        treeNum = 4;
         onEndLevel += Level_Restart;
         onScoreChanged += changeScore;
         onDifficltyLevelChange += incDiffLevel;
@@ -178,7 +179,9 @@ public class LevelManager : MonoBehaviour
     }
     public void KillTree(object sender, onTreeDamagedArgs e)
     {
-        treeNum--;
+        int mytreeNum = 0;
+        for (int x = 0; x < treesHealth.Length; x++) { if (treesHealth[x]>=0) mytreeNum++; }
+        treeNum=mytreeNum;
     }
    public void PlantTree(object sender, onTreeDamagedArgs e)
     {
@@ -188,5 +191,24 @@ public class LevelManager : MonoBehaviour
             treeNum++;
         }
        
+    }
+    public void notifySeedOptained()
+    {
+        onSeedsObtained?.Invoke(this, new EventArgs());
+    }
+
+    public void notifyTreeSpawned(int ntreeIndex)
+    {
+        onTreeSpawned?.Invoke(this, new onTreeDamagedArgs { treeIndex = ntreeIndex });
+    }
+
+    public void notifyTreeKilled(int ntreeIndex)
+    {
+        onTreeKilled?.Invoke(this, new onTreeDamagedArgs { treeIndex = ntreeIndex });
+    }
+
+    public void notifyTreeAttacked(int ntreeIndex)
+    {
+        onTreeAttacked?.Invoke(this, new onTreeDamagedArgs { treeIndex = ntreeIndex });
     }
 }
