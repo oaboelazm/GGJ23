@@ -108,7 +108,7 @@ public class CanvasManager : MonoBehaviour
     public void updateTreeHealthSprite(object sender, LevelManager.onTreeDamagedArgs e)
     {
         int MHOT = LevelManagerScript.MaxHealthOfTrees;
-        int TreeHealth = LevelManagerScript.treesHealth[e.treeIndex];
+        float TreeHealth = LevelManagerScript.treesHealth[e.treeIndex];
         float heathPersentage = ((float)TreeHealth)/((float)(MHOT));
         if (heathPersentage>0.5f)
         {

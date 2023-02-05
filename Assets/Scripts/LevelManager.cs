@@ -45,8 +45,8 @@ public class LevelManager : MonoBehaviour
     public static event EventHandler onSeedsObtained;
     public static event EventHandler onHavingEnoughSeeds;
     public static event EventHandler<onTreeDamagedArgs> onTreeAttacked;
-    public class onTreeDamagedArgs : EventArgs { public int treeIndex; }
-    [SerializeField] public int[] treesHealth;
+    public class onTreeDamagedArgs : EventArgs { public int treeIndex; public float ehp; }
+    [SerializeField] public float[] treesHealth;
     public int MaxHealthOfTrees;
     
     [SerializeField] public int seedNeededToPlant;
@@ -55,7 +55,7 @@ public class LevelManager : MonoBehaviour
 
     void Awake()
     {
-        treesHealth = new int[] { MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees };
+        treesHealth = new float[] { MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees };
         treeNum = 4;
         onScoreChanged += changeScore;
         onDifficltyLevelChange += incDiffLevel;
@@ -100,7 +100,7 @@ public class LevelManager : MonoBehaviour
          
         if(trees.Length  == 0)
         {
-              GameObject Soundfx;
+        GameObject Soundfx;
         Soundfx = GameObject.FindWithTag("sfx");
         Soundfx.GetComponent<SFXSystem>().MakeSound("Lose");
 
@@ -182,7 +182,7 @@ public class LevelManager : MonoBehaviour
 
     private void dicDamage(object sender, onTreeDamagedArgs e)
     {
-        treesHealth[e.treeIndex]=treesHealth[e.treeIndex]-1;
+        treesHealth[e.treeIndex]=e.ehp;
         if(treesHealth[e.treeIndex]<=0) {onTreeKilled?.Invoke(this, e);}
     }
     public void restart_level_public()
@@ -219,8 +219,8 @@ public class LevelManager : MonoBehaviour
         onTreeKilled?.Invoke(this, new onTreeDamagedArgs { treeIndex = ntreeIndex });
     }
 
-    public void notifyTreeAttacked(int ntreeIndex)
+    public void notifyTreeAttacked(int ntreeIndex, float hp)
     {
-        onTreeAttacked?.Invoke(this, new onTreeDamagedArgs { treeIndex = ntreeIndex });
+        onTreeAttacked?.Invoke(this, new onTreeDamagedArgs { treeIndex = ntreeIndex ,ehp =hp });
     }
 }

@@ -10,6 +10,8 @@ public class TreeBehaviour : MonoBehaviour
 
     public Sprite[] treeSprites;
     public GameObject deadTree;
+    Vector3[] TreesPos = new Vector3[] { new Vector3(-15.88f, 2.06f, 0) , new Vector3(0.18f, 7.36f, 0f) , new Vector3(15.0900002f, 3.46000004f, 0), new Vector3(-1.42999995f, -8.19999981f, 0) };
+    
     int treeIndex;
     GameObject Soundfx;
     private void Start()
@@ -18,6 +20,16 @@ public class TreeBehaviour : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = treeSprites[treeIndex];
         
         Soundfx = GameObject.FindWithTag("sfx");
+        int index = 0;
+        Vector3 myPos = this.gameObject.transform.position;
+        for(int i =0;i<TreesPos.Length;i++)
+        {
+            if(Vector3.Distance(myPos, TreesPos[index])>Vector3.Distance(myPos, TreesPos[i]))
+            {
+                index= i;
+            }
+        }
+        treeIndex = index;
     }
     private void Update()
     {
@@ -26,8 +38,8 @@ public class TreeBehaviour : MonoBehaviour
             Instantiate(deadTree, transform.position, Quaternion.identity);
             deadTree.GetComponent<DeadTree>().treeIndex = treeIndex;
             GameObject Soundfx;
-        Soundfx = GameObject.FindWithTag("sfx");
-        Soundfx.GetComponent<SFXSystem>().MakeSound("Scream");
+            Soundfx = GameObject.FindWithTag("sfx");
+            Soundfx.GetComponent<SFXSystem>().MakeSound("Scream");
 
             Destroy(gameObject);
         }
@@ -35,8 +47,10 @@ public class TreeBehaviour : MonoBehaviour
     public void Damage()
     {
         hp-= Time.deltaTime * damageRate;
-       
-        if(!Soundfx.GetComponent<SFXSystem>().Source.GetComponent<AudioSource>().isPlaying){
+        var LevelManagerObject = GameObject.Find("LevelManagerObject");
+        var LevelManagerScript = LevelManagerObject.GetComponent<LevelManager>();
+        LevelManagerScript.notifyTreeAttacked(treeIndex,hp);
+        if (!Soundfx.GetComponent<SFXSystem>().Source.GetComponent<AudioSource>().isPlaying){
         Soundfx.GetComponent<SFXSystem>().MakeSound("Damage");
         }
     }
