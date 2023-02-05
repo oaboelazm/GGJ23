@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class SFXSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioSource Click;
 
-    // Update is called once per frame
-    void Update()
-    {
+    public AudioSource Notifiy;
+
+    public AudioSource collect;
+
+    public AudioSource GrowSeeds;
+
+    public AudioSource KillEnemy;
+
+    public AudioSource Warning;
+
+    public AudioSource Damage;
+
+    public AudioSource Scream;
+
+   public void MakeSound()
+   {
         
-    }
+   }
 }
