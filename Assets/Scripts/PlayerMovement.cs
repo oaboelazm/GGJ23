@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public bool nearDeadTree = false;
     public GameObject nearestDeadTree = null;
     public int seeds = 0;
+    public Animator animator;
+    Vector2 movement;
     EnemyMovement em;
     void Start()
     {
@@ -24,14 +26,21 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Vector2 x = Input.GetAxis("Horizontal") * Vector2.right * speed * Time.fixedDeltaTime;
-        Vector2 y = Input.GetAxis("Vertical") * Vector2.up * speed * Time.fixedDeltaTime;
-        rb.MovePosition(rb.position + x + y);
+        //movement.x = Input.GetAxis("Horizontal") * Vector2.right * speed * Time.fixedDeltaTime;
+        //movement.y = Input.GetAxis("Vertical") * Vector2.up * speed * Time.fixedDeltaTime;
+
+        
+        rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
 
     private void Update()
     {
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         deadTrees = GameObject.FindGameObjectsWithTag("DeadTree");
         enemies = FindAllNearest(enemies);
@@ -48,6 +57,19 @@ public class PlayerMovement : MonoBehaviour
                 em.Damage();
             }
         }
+        if(enemies.Length != 0){
+            float x = (transform.position  - enemies[0].transform.position).x;
+            if(x < 0){
+                animator.SetFloat("Right", 1f);
+            }
+            if(x >= 0){
+                animator.SetFloat("Right" , -1f);
+            }
+            this.animator.ResetTrigger("Attack");
+
+            this.animator.SetTrigger("Attack");
+        }
+        if(deadTrees.Length > 0) {
         if (deadTrees.Length > 0) {
             nearestDeadTree = FindNearest(deadTrees);
             float x = (nearestDeadTree.transform.position - transform.position).sqrMagnitude;
@@ -90,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
         }
         return nearEnemies.ToArray();
     }
-
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         seeds++;

@@ -903,6 +903,7 @@ GameObject:
   - component: {fileID: 306319545}
   - component: {fileID: 306319546}
   - component: {fileID: 306319547}
+  - component: {fileID: 306319548}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -951,7 +952,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 803761606, guid: 155862d770de8464eadf28f5fc742ada, type: 3}
+  m_Sprite: {fileID: -1110821126, guid: 51f2721fe241de842b09c0e441e9a358, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1032,6 +1033,7 @@ MonoBehaviour:
   nearDeadTree: 0
   nearestDeadTree: {fileID: 0}
   seeds: 0
+  animator: {fileID: 306319548}
 --- !u!114 &306319547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1049,6 +1051,26 @@ MonoBehaviour:
   seeds: 20
   IsPoweredUp: 0
   pm: {fileID: 306319546}
+--- !u!95 &306319548
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306319540}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e0241d5555263f4aa5faa1f1e762d38, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &328809857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3147,7 +3169,7 @@ MonoBehaviour:
   - {fileID: 1772840866}
   - {fileID: 732005034}
   radius: 5
-  enemy: {fileID: 9093016827555788045, guid: e34548b817b38c340b03e70e69cc49a3, type: 3}
+  enemy: {fileID: 9058042140217746024, guid: cca22e401ae9d1c4a9ebf8f76137554a, type: 3}
 --- !u!1 &1317682508
 GameObject:
   m_ObjectHideFlags: 0
