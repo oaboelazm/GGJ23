@@ -13,6 +13,7 @@ public class TreeBehaviour : MonoBehaviour
     Vector3[] TreesPos = new Vector3[] { new Vector3(-15.88f, 2.06f, 0) , new Vector3(0.18f, 7.36f, 0f) , new Vector3(15.0900002f, 3.46000004f, 0), new Vector3(-1.42999995f, -8.19999981f, 0) };
     
     int treeIndex;
+    int etreeIndex;
     GameObject Soundfx;
     private void Start()
     {
@@ -29,7 +30,7 @@ public class TreeBehaviour : MonoBehaviour
                 index= i;
             }
         }
-        treeIndex = index;
+        etreeIndex = index;
     }
     private void Update()
     {
@@ -49,7 +50,7 @@ public class TreeBehaviour : MonoBehaviour
         hp-= Time.deltaTime * damageRate;
         var LevelManagerObject = GameObject.Find("LevelManagerObject");
         var LevelManagerScript = LevelManagerObject.GetComponent<LevelManager>();
-        LevelManagerScript.notifyTreeAttacked(treeIndex,hp);
+        LevelManagerScript.notifyTreeAttacked(etreeIndex, hp);
         if (!Soundfx.GetComponent<SFXSystem>().Source.GetComponent<AudioSource>().isPlaying){
         Soundfx.GetComponent<SFXSystem>().MakeSound("Damage");
         }

@@ -26,10 +26,14 @@ public class EnemyMovement : MonoBehaviour
          trees = GameObject.FindGameObjectsWithTag("Tree");
         if(trees.Length == 0)
         {
+            
             Destroy(gameObject);
         }
         if(hp <= 0f)
         {
+            var LevelManagerObject = GameObject.Find("LevelManagerObject");
+            var LevelManagerScript = LevelManagerObject.GetComponent<LevelManager>();
+            LevelManagerScript.notifyScore();
             Instantiate(seedPrefab , transform.position , Quaternion.identity);
             GameObject Soundfx;
             Soundfx = GameObject.FindWithTag("sfx");

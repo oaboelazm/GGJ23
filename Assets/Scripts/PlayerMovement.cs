@@ -94,5 +94,11 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         seeds++;
+        notifyLevelManagerSeeds();
+    }
+    public void notifyLevelManagerSeeds()
+    {
+        GameObject LevelManagerObject = GameObject.Find("LevelManagerObject");
+        LevelManagerObject.GetComponent<LevelManager>().notifySeedOptained();
     }
 }

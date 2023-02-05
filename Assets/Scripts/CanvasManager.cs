@@ -36,8 +36,8 @@ public class CanvasManager : MonoBehaviour
 
     int DlogStart = 0;
     int DlogEnemiesSpawned = 1;
-    int DLogEnemyKilled = 3;
-    int DlogEnoughSeeds = 4;
+    int DLogEnemyKilled = 2;
+    int DlogEnoughSeeds = 3;
 
 
     public TextMeshProUGUI Timer;
@@ -59,7 +59,7 @@ public class CanvasManager : MonoBehaviour
             "hi help us protect our trees",
             "kill the enemies before they get to the trees",
             "each enemy will drop a seed which can be used to plant a tree",
-            "you have enough seeds you can now plant a tree"
+            "if you have enough seeds you can plant a tree"
         };
         dialog_appeared = new bool[dialog_string.Length];
 
@@ -94,10 +94,10 @@ public class CanvasManager : MonoBehaviour
     }
     public void CanvasUpdateSeed(object sender, EventArgs e)
     {
-        seedCounter.GetComponent<TextMeshProUGUI>().text =  LevelManagerScript.seedNumber.ToString("D6");
+        seedCounter.GetComponent<TextMeshProUGUI>().text =  LevelManagerScript.seedNumber.ToString("D2");
         if (LevelManagerScript.seedNumber >= LevelManagerScript.seedNeededToPlant)
         {
-            StartCoroutine(WaitAndPrint(0.3f, DlogEnemiesSpawned));
+            StartCoroutine(WaitAndPrint(0.3f, DLogEnemyKilled));
         }
     }
     public void CanvasUpdateScore(object sender, EventArgs e)

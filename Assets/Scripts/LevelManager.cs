@@ -223,4 +223,9 @@ public class LevelManager : MonoBehaviour
     {
         onTreeAttacked?.Invoke(this, new onTreeDamagedArgs { treeIndex = ntreeIndex ,ehp =hp });
     }
+    public void notifyScore()
+    {
+        score += (seedMutiplier*seedNumber) + (treeNum*treeMultiplier) + (enemyMultiplier);
+        onScoreChanged?.Invoke(this, new onScoreChangedArgs { eScore = this.score });
+    }
 }
