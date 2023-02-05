@@ -16,13 +16,18 @@ public class EnemyMovement : MonoBehaviour
     public float damageRate = 0.5f;
     public GameObject seedPrefab;
     Rigidbody2D rb;
+    public  bool isDamaging = false;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
-
+         trees = GameObject.FindGameObjectsWithTag("Tree");
+        if(trees.Length == 0)
+        {
+            Destroy(gameObject);
+        }
         if(hp <= 0f)
         {
             Instantiate(seedPrefab , transform.position , Quaternion.identity);
@@ -31,15 +36,21 @@ public class EnemyMovement : MonoBehaviour
             Soundfx.GetComponent<SFXSystem>().MakeSound("KillEnemy");
             Destroy(gameObject);
         }
-        trees = GameObject.FindGameObjectsWithTag("Tree");
-
+       
         GameObject x = FindNearest(trees);
-        if((x.transform.position - transform.position).sqrMagnitude > TreeDamageRadius) { 
+        if((x.transform.position - transform.position).sqrMagnitude > TreeDamageRadius)
+        {
             rb.MovePosition(Vector2.MoveTowards(transform.position, x.transform.position, MovingSpeed * Time.deltaTime));
+            isDamaging = false;
         }
         else
         {
-           x.GetComponent<TreeBehaviour>().Damage();       
+            x.GetComponent<TreeBehaviour>().Damage();
+            isDamaging = true;
+        }
+        if (isDamaging)
+        {
+            DangerIndicatorManager.OnDangerTriggered.Invoke(transform);
         }
         // transform.up = x - (Vector2) transform.position;
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     public Transform player;
-    public float speed = 10f;
+    public float speed = 100f;
     [Range (1f, 10f)]
     public float maxCmaeraZoom = 4.5f;
     [Range (1f, 10f)]
