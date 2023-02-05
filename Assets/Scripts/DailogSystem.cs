@@ -41,10 +41,11 @@ public class DailogSystem : MonoBehaviour
 
     public void MakeDailog(string Sentence)
     {
-    	//panelAnim?.SetBool("Show", true);
-    	//panelAnim?.SetBool("Hide", false);
-    	StartCoroutine(Type(Sentence));
-	IsDialog = true;
+        //panelAnim?.SetBool("Show", true);
+        //panelAnim?.SetBool("Hide", false);
+        Text.text = "";
+        StartCoroutine(Type(Sentence));
+        IsDialog = true;
     }
 
     IEnumerator Type(string Sentence){

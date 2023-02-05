@@ -13,8 +13,8 @@ public class LevelManager : MonoBehaviour
     float timer;
     float minutes;
     float seconds;
-    float lastMinutes;
-    float lastSeconds;
+    public float lastMinutes;
+    public float lastSeconds;
 
     /*******************************************************************
                            Gameplay events handlered                      
@@ -99,8 +99,29 @@ public class LevelManager : MonoBehaviour
 
         if (trees.Length == 0)
         {
+<<<<<<< HEAD
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+=======
+              GameObject Soundfx;
+        Soundfx = GameObject.FindWithTag("sfx");
+        Soundfx.GetComponent<SFXSystem>().MakeSound("Lose");
+
+            // Show dialog 
+           // Level_Restart(SceneManager.GetActiveScene().buildIndex);
+        }
+        /*******************************************************************
+                                  timer part                            
+        *******************************************************************/
+        if (lastMinutes != minutes || lastSeconds != seconds)
+        {
+            lastMinutes = minutes;
+            lastSeconds = seconds;
+           //Debug.Log(string.Format("{0:00}:{1:00}", minutes, seconds));
+        }
+
+        
+>>>>>>> 1e6912268b50ea9ff04be0b4b021ae81bbd39c0a
     }
 
     /*******************************************************************

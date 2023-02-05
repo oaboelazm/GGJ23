@@ -31,6 +31,9 @@ public class EnemyMovement : MonoBehaviour
         if(hp <= 0f)
         {
             Instantiate(seedPrefab , transform.position , Quaternion.identity);
+            GameObject Soundfx;
+            Soundfx = GameObject.FindWithTag("sfx");
+            Soundfx.GetComponent<SFXSystem>().MakeSound("KillEnemy");
             Destroy(gameObject);
         }
        
