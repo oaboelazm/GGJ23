@@ -50,12 +50,12 @@ public class LevelManager : MonoBehaviour
     public int MaxHealthOfTrees;
     
     [SerializeField] public int seedNeededToPlant;
+    private GameObject[] trees;
 
- 
+
     void Awake()
     {
         treesHealth = new int[] { MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees };
-        onEndLevel += Level_Restart;
         onScoreChanged += changeScore;
         onDifficltyLevelChange += incDiffLevel;
         onSeedsObtained+= incSeeds;
@@ -94,6 +94,13 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
 
+        trees = GameObject.FindGameObjectsWithTag("Tree");
+
+         
+        if(trees.Length  == 0)
+        {
+            Level_Restart(SceneManager.GetActiveScene().buildIndex);
+        }
         /*******************************************************************
                                   timer part                            
         *******************************************************************/
@@ -103,6 +110,8 @@ public class LevelManager : MonoBehaviour
             lastSeconds = seconds;
             Debug.Log(string.Format("{0:00}:{1:00}", minutes, seconds));
         }
+
+        
     }
 
     /*******************************************************************
@@ -130,9 +139,9 @@ public class LevelManager : MonoBehaviour
     /*******************************************************************
                            Scene Methods                        
     *******************************************************************/
-    public void Level_Restart(object sender, System.EventArgs e)
+    public void Level_Restart(int sceneIndex)
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(sceneIndex);
     }
     /*******************************************************************
                            Gameplay events                      

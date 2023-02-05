@@ -11,6 +11,7 @@ public class TreeBehaviour : MonoBehaviour
     public Sprite[] treeSprites;
     public GameObject deadTree;
     int treeIndex;
+
     private void Start()
     {
         treeIndex = Random.Range(0, treeSprites.Length);

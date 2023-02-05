@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DeadTree : MonoBehaviour
@@ -7,6 +6,7 @@ public class DeadTree : MonoBehaviour
     public int treeIndex;
     public Sprite[] treeSprites;
     public bool isSeeded = false;
+    public GameObject tree;
     void Start()
     {
         GetComponent<SpriteRenderer>().sprite = treeSprites[treeIndex];
@@ -16,6 +16,15 @@ public class DeadTree : MonoBehaviour
     public void plantSeed()
     {
         isSeeded = true;
-        Debug.Log("Tree Is Seeded");
+        StartCoroutine("plantTree");
+    }
+
+
+    private IEnumerator plantTree()
+    {
+
+        yield return new WaitForSeconds(3f); 
+        Instantiate(tree , transform.position , Quaternion.identity);
+        Destroy(tree);
     }
 }
