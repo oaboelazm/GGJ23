@@ -31,6 +31,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] int enemyMultiplier = 1;
     [SerializeField] int seedMutiplier = 1;
 
+
+    
+
     public static event EventHandler onEndLevel;
     public static event EventHandler<onScoreChangedArgs> onScoreChanged;
     public class onScoreChangedArgs : EventArgs { public int eScore; }
@@ -46,8 +49,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] public int[] treesHealth;
     public int MaxHealthOfTrees;
     
-    
+    [SerializeField] public int seedNeededToPlant;
 
+ 
     void Awake()
     {
         treesHealth = new int[] { MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees };
@@ -60,6 +64,13 @@ public class LevelManager : MonoBehaviour
         onTreeKilled+= KillTree;
         onEnemyKilled+= computeScore;
         onTreeAttacked+= dicDamage;
+
+        
+
+        
+        
+
+
     }
 
 
@@ -159,19 +170,23 @@ public class LevelManager : MonoBehaviour
     private void dicDamage(object sender, onTreeDamagedArgs e)
     {
         treesHealth[e.treeIndex]=treesHealth[e.treeIndex]-1;
-        if(treesHealth[e.treeIndex]<=0) {}
+        if(treesHealth[e.treeIndex]<=0) {onTreeKilled?.Invoke(this, e);}
     }
     public void restart_level_public()
     {
-        onEndLevel.Invoke(this,new EventArgs());
+        onEndLevel?.Invoke(this,new EventArgs());
     }
     public void KillTree(object sender, onTreeDamagedArgs e)
     {
         treeNum--;
     }
-    public void PlantTree(object sender, onTreeDamagedArgs e)
+   public void PlantTree(object sender, onTreeDamagedArgs e)
     {
-        treesHealth[e.treeIndex]=MaxHealthOfTrees;
-        treeNum++;
+        if(seedNumber >= seedNeededToPlant){
+            seedNumber-=seedNeededToPlant;
+            treesHealth[e.treeIndex]=MaxHealthOfTrees;
+            treeNum++;
+        }
+       
     }
 }
