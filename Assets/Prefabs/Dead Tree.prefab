@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4252019130622151859}
   - component: {fileID: 5668855578310155105}
   - component: {fileID: 4478110712519225620}
+  - component: {fileID: 1436137262266758964}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -101,6 +102,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1436137262266758964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443457674563977854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf02fe4f54619e47a6960bf876b724b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1703895691285646411
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +221,9 @@ MonoBehaviour:
   - {fileID: -2019501008, guid: 155862d770de8464eadf28f5fc742ada, type: 3}
   isSeeded: 0
   tree: {fileID: 4887083522118043740, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+  cooldown: 0
+  cooldownDuration: 5
+  currentTime: -1
 --- !u!58 &1438252506445963463
 CircleCollider2D:
   m_ObjectHideFlags: 0

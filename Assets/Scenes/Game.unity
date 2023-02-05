@@ -171,9 +171,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -314
       objectReference: {fileID: 0}
+    - target: {fileID: 6160044906772100666, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160044906772100666, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -341
+      objectReference: {fileID: 0}
     - target: {fileID: 6160044906772100667, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906904900230, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchorMax.y
@@ -198,6 +206,10 @@ PrefabInstance:
     - target: {fileID: 6160044906904900230, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160044906949730110, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.21435547
       objectReference: {fileID: 0}
     - target: {fileID: 6160044907699447215, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_fontAsset
@@ -241,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6160044907906703858, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6160044907906703858, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchorMax.x
@@ -327,6 +339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6160044907906703870, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6160044908035135961, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -355,6 +371,10 @@ PrefabInstance:
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 030794806200fd34db5e94ac75603f79, type: 2}
+    - target: {fileID: 6160044908243319301, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6160044908243319301, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_sharedMaterial
       value: 
@@ -51766,12 +51786,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 803761606, guid: 155862d770de8464eadf28f5fc742ada, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 3.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -52167,7 +52187,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &732005033
 GameObject:
@@ -52233,7 +52253,7 @@ RectTransform:
   m_Children:
   - {fileID: 1062548957}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -52308,6 +52328,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3643069500838739865, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: treeSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643069500838739865, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: treeSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 961834390, guid: 155862d770de8464eadf28f5fc742ada, type: 3}
     - target: {fileID: 4887083522118043740, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
       propertyPath: m_Name
       value: Tree (1)
@@ -52323,6 +52351,75 @@ PrefabInstance:
     - target: {fileID: 4887083522118043741, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
       propertyPath: m_LocalPosition.y
       value: -8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887083522118043741, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887083522118043741, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887083522118043741, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887083522118043741, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887083522118043741, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887083522118043741, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887083522118043741, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887083522118043741, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+--- !u!1001 &1040300095
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3643069500838739865, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: hp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643069500838739865, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: treeSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643069500838739865, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: treeSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 961834390, guid: 155862d770de8464eadf28f5fc742ada, type: 3}
+    - target: {fileID: 4887083522118043740, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: m_Name
+      value: Tree (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887083522118043741, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887083522118043741, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887083522118043741, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.37
       objectReference: {fileID: 0}
     - target: {fileID: 4887083522118043741, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
       propertyPath: m_LocalPosition.z
@@ -52731,7 +52828,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1316341260
 GameObject:
@@ -52900,8 +52997,8 @@ MonoBehaviour:
   treeMultiplier: 1
   enemyMultiplier: 1
   seedMutiplier: 1
-  treesHealth: 
-  MaxHealthOfTrees: 100
+  treesHealth: []
+  MaxHealthOfTrees: 20
   seedNeededToPlant: 10
 --- !u!4 &1693164640
 Transform:
@@ -52916,7 +53013,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1772840865
 GameObject:
@@ -52956,6 +53053,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3643069500838739865, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: treeSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643069500838739865, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
+      propertyPath: treeSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 961834390, guid: 155862d770de8464eadf28f5fc742ada, type: 3}
     - target: {fileID: 4887083522118043740, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
       propertyPath: m_Name
       value: Tree (2)

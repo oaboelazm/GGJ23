@@ -8,7 +8,7 @@ public class getCamera : MonoBehaviour
 
     void Start()
     {
-        cam = GameObject.FindAnyObjectByType<Camera>();
+        cam = GameObject.FindObjectOfType<Camera>();
         GetComponent<Canvas>().worldCamera = cam;
 
     }

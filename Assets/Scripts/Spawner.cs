@@ -10,10 +10,12 @@ public class Spawner : MonoBehaviour
     public float radius = 5f;
     public GameObject enemy;
     private GameObject[] trees;
+
+   
     void Update()
     {
         trees = GameObject.FindGameObjectsWithTag("Tree");
-
+        
         if (Time.timeSinceLevelLoad > TimeUntillSpawn)
         {
             Spawn();
