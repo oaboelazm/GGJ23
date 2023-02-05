@@ -85,7 +85,12 @@ public class CanvasManager : MonoBehaviour
 
     void Update()
     {
-        Timer.text= string.Format("{0:00}:{1:00}", LevelManagerScript.lastMinutes, LevelManagerScript.lastSeconds);
+        if(Timer is null)
+        {
+            return;
+        }
+        
+        Timer.text = string.Format("{0:00}:{1:00}", LevelManagerScript.lastMinutes, LevelManagerScript.lastSeconds);
     }
     public void CanvasUpdateSeed(object sender, EventArgs e)
     {

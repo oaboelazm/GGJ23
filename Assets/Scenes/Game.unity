@@ -141,27 +141,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906677898959, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906677898959, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906677898959, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 164.03604
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906677898959, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 169.02148
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906677898959, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 654.12616
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906677898959, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -84.51074
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906704998070, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -171,33 +171,45 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -314
       objectReference: {fileID: 0}
+    - target: {fileID: 6160044906772100666, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160044906772100666, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -341
+      objectReference: {fileID: 0}
     - target: {fileID: 6160044906772100667, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906904900230, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906904900230, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906904900230, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 164.03604
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906904900230, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 169.02148
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906904900230, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 286.05408
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044906904900230, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -84.51074
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160044906949730110, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.21435547
       objectReference: {fileID: 0}
     - target: {fileID: 6160044907699447215, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_fontAsset
@@ -209,27 +221,27 @@ PrefabInstance:
       objectReference: {fileID: -1659355560478966771, guid: 030794806200fd34db5e94ac75603f79, type: 2}
     - target: {fileID: 6160044907844416378, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044907844416378, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044907844416378, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 164.03604
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044907844416378, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 169.02148
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044907844416378, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 470.0901
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044907844416378, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -84.51074
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044907906703858, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_Pivot.x
@@ -329,36 +341,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6160044907906703870, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6160044908035135961, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044908035135961, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044908035135961, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 164.03604
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044908035135961, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 169.02148
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044908035135961, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 102.01802
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044908035135961, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -84.51074
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160044908243319301, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 030794806200fd34db5e94ac75603f79, type: 2}
+    - target: {fileID: 6160044908243319301, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6160044908243319301, guid: b3ee60554d3a15441bf20a151bcb3a90, type: 3}
       propertyPath: m_sharedMaterial
       value: 
@@ -51770,15 +51786,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 803761606, guid: 155862d770de8464eadf28f5fc742ada, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 3.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &306319543
@@ -52955,7 +52971,7 @@ GameObject:
   - component: {fileID: 1693164640}
   - component: {fileID: 1693164639}
   m_Layer: 0
-  m_Name: Level Manager
+  m_Name: LevelManagerObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52981,7 +52997,7 @@ MonoBehaviour:
   treeMultiplier: 1
   enemyMultiplier: 1
   seedMutiplier: 1
-  treesHealth: 
+  treesHealth: []
   MaxHealthOfTrees: 20
   seedNeededToPlant: 10
 --- !u!4 &1693164640
