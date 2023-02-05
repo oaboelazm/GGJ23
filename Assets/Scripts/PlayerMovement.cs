@@ -7,12 +7,15 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 10f;
     private Rigidbody2D rb;
+    public float EnemyAudioRadius = 20f;
+
     public float EnemyDamageRadius = 5f;
     private GameObject[] enemies;
     private GameObject[] deadTrees;
     public bool nearDeadTree = false;
     public GameObject nearestDeadTree = null;
     public int seeds = 0;
+    EnemyMovement em;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,9 +37,18 @@ public class PlayerMovement : MonoBehaviour
         enemies = FindAllNearest(enemies);
         foreach(GameObject enemy in enemies)
         {
-            enemy.GetComponent<EnemyMovement>().Damage();
+
+            em = enemy.GetComponent<EnemyMovement>();
+            if (em.isDamaging)
+            {
+                // Run Damage Voice
+            }
+            if ((enemy.transform.position - transform.position).sqrMagnitude < EnemyDamageRadius)
+            {
+                em.Damage();
+            }
         }
-        if(deadTrees.Length > 0) {
+        if (deadTrees.Length > 0) {
             nearestDeadTree = FindNearest(deadTrees);
             float x = (nearestDeadTree.transform.position - transform.position).sqrMagnitude;
             if (x < 2f)
@@ -71,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         for (int i = 0; i < enemies.Length; i++)
         {
             diff = enemies[i].transform.position - transform.position;
-            if (diff.sqrMagnitude < EnemyDamageRadius)
+            if (diff.sqrMagnitude < EnemyAudioRadius)
             {
                 nearEnemies.Add(enemies[i]);
             }

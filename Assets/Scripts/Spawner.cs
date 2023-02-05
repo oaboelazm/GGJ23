@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
     {
         trees = GameObject.FindGameObjectsWithTag("Tree");
 
-        if (Time.time > TimeUntillSpawn)
+        if (Time.timeSinceLevelLoad > TimeUntillSpawn)
         {
             Spawn();
             TimeUntillSpawn += TimeBetweenSpawns;

@@ -3,6 +3,7 @@ using System.Collections;
 using System.IO;
 using System;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class LevelManager : MonoBehaviour
 {
@@ -52,7 +53,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField] public int seedNeededToPlant;
     private GameObject[] trees;
 
-
     void Awake()
     {
         treesHealth = new int[] { MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees, MaxHealthOfTrees };
@@ -92,27 +92,15 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    void Update()
+    private void LateUpdate()
     {
-
         trees = GameObject.FindGameObjectsWithTag("Tree");
+       
 
-         
-        if(trees.Length  == 0)
+        if (trees.Length == 0)
         {
-            Level_Restart(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        /*******************************************************************
-                                  timer part                            
-        *******************************************************************/
-        if (lastMinutes != minutes || lastSeconds != seconds)
-        {
-            lastMinutes = minutes;
-            lastSeconds = seconds;
-            Debug.Log(string.Format("{0:00}:{1:00}", minutes, seconds));
-        }
-
-        
     }
 
     /*******************************************************************
