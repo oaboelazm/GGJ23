@@ -47,6 +47,9 @@ public class EnemyMovement : MonoBehaviour
         {
             x.GetComponent<TreeBehaviour>().Damage();
             isDamaging = true;
+          //var LevelManagerObject = GameObject.Find("LevelManagerObject");
+            //var LevelManagerScript = LevelManagerObject.GetComponent<LevelManager>();
+             //LevelManagerScript.notifyTreeAttacked();
         }
         if (isDamaging)
         {
