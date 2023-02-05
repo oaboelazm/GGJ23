@@ -480,6 +480,7 @@ GameObject:
   - component: {fileID: 7176373957790134197}
   - component: {fileID: 534949327926553905}
   - component: {fileID: 6669358831928890671}
+  - component: {fileID: -2473042595741715182}
   m_Layer: 0
   m_Name: Enenmy
   m_TagString: Enemy
@@ -600,3 +601,24 @@ MonoBehaviour:
   hp: 5
   damageRate: 0.5
   seedPrefab: {fileID: 8326688292962142431, guid: b3f8af89b0cc7d14c8429c4f388a088f, type: 3}
+--- !u!50 &-2473042595741715182
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9093016827555788045}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

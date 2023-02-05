@@ -30,9 +30,12 @@ public class Seed : MonoBehaviour
         }
     }
 
-
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GameObject Soundfx;
+        Soundfx = GameObject.FindWithTag("sfx");
+        Soundfx.GetComponent<SFXSystem>().MakeSound("Collect");
         Destroy(gameObject);
     }
 }

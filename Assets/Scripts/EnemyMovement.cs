@@ -15,19 +15,27 @@ public class EnemyMovement : MonoBehaviour
     public float hp = 5f;
     public float damageRate = 0.5f;
     public GameObject seedPrefab;
+    Rigidbody2D rb;
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     void Update()
     {
 
         if(hp <= 0f)
         {
             Instantiate(seedPrefab , transform.position , Quaternion.identity);
+            GameObject Soundfx;
+            Soundfx = GameObject.FindWithTag("sfx");
+            Soundfx.GetComponent<SFXSystem>().MakeSound("KillEnemy");
             Destroy(gameObject);
         }
         trees = GameObject.FindGameObjectsWithTag("Tree");
 
         GameObject x = FindNearest(trees);
         if((x.transform.position - transform.position).sqrMagnitude > TreeDamageRadius) { 
-            transform.position = Vector2.MoveTowards(transform.position, x.transform.position, MovingSpeed * Time.deltaTime);
+            rb.MovePosition(Vector2.MoveTowards(transform.position, x.transform.position, MovingSpeed * Time.deltaTime));
         }
         else
         {

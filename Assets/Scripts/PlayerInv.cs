@@ -53,6 +53,8 @@ public class PlayerInv : MonoBehaviour
     {
                 dt.plantSeed();
                 pm.seeds -= seedLimit;
-        // get dead tree and revive it
+        GameObject Soundfx;
+        Soundfx = GameObject.FindWithTag("sfx");
+        Soundfx.GetComponent<SFXSystem>().MakeSound("GrowSeeds");
     }
 }

@@ -98,12 +98,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3252fa12fef210e45b70938748b7306e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treeIndex: 0
+  treeIndex: 2
   treeSprites:
   - {fileID: -1260368553, guid: 155862d770de8464eadf28f5fc742ada, type: 3}
   - {fileID: 1377232728, guid: 155862d770de8464eadf28f5fc742ada, type: 3}
   - {fileID: -63746016, guid: 155862d770de8464eadf28f5fc742ada, type: 3}
   - {fileID: -2019501008, guid: 155862d770de8464eadf28f5fc742ada, type: 3}
+  isSeeded: 0
+  tree: {fileID: 4887083522118043740, guid: 496ba5840b524a34c8087599e98a5e39, type: 3}
 --- !u!58 &1438252506445963463
 CircleCollider2D:
   m_ObjectHideFlags: 0
