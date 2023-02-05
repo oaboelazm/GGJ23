@@ -9,11 +9,13 @@ public class UIMenus : MonoBehaviour
    public void ChangeToScene(string sceneToChangeTo) 
     {
 		Application.LoadLevel(sceneToChangeTo);
+        this.GetComponent<AudioSource>().Play(); // to play Click sound
     }
 
 	public void QuitGame()
 	{
 		Application.Quit();
+        this.GetComponent<AudioSource>().Play(); // to play Click sound
 	}
 
     //************************************* Mute sound of the game. *********************************************//
