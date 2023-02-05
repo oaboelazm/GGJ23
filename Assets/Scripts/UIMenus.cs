@@ -9,13 +9,18 @@ public class UIMenus : MonoBehaviour
    public void ChangeToScene(string sceneToChangeTo) 
     {
 		Application.LoadLevel(sceneToChangeTo);
-        this.GetComponent<AudioSource>().Play(); // to play Click sound
+        GameObject Soundfx;
+        Soundfx = GameObject.FindWithTag("sfx");
+        Soundfx.GetComponent<SFXSystem>().MakeSound("Click"); // to play Click sound
     }
 
 	public void QuitGame()
 	{
 		Application.Quit();
-        this.GetComponent<AudioSource>().Play(); // to play Click sound
+        this.GetComponent<AudioSource>().Play();
+          GameObject Soundfx;
+        Soundfx = GameObject.FindWithTag("sfx");
+        Soundfx.GetComponent<SFXSystem>().MakeSound("Click"); // to play Click sound
 	}
 
     //************************************* Mute sound of the game. *********************************************//

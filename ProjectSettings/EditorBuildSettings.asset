@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameplayScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Omar.unity
+    guid: 44da9d8e9f47aac47bf5380d7ac3f0b6
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 69d2ade54e1b5e34bb2f5f380b945479
   m_configObjects: {}

@@ -100,7 +100,12 @@ public class LevelManager : MonoBehaviour
          
         if(trees.Length  == 0)
         {
-            Level_Restart(SceneManager.GetActiveScene().buildIndex);
+              GameObject Soundfx;
+        Soundfx = GameObject.FindWithTag("sfx");
+        Soundfx.GetComponent<SFXSystem>().MakeSound("Lose");
+
+            // Show dialog 
+           // Level_Restart(SceneManager.GetActiveScene().buildIndex);
         }
         /*******************************************************************
                                   timer part                            

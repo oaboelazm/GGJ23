@@ -844,9 +844,11 @@ GameObject:
   m_Component:
   - component: {fileID: 782135128}
   - component: {fileID: 782135127}
+  - component: {fileID: 782135129}
+  - component: {fileID: 782135130}
   m_Layer: 0
   m_Name: GameSound
-  m_TagString: Untagged
+  m_TagString: sfx
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -863,7 +865,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5583b9894e79e6448b7ed5a7afebdc06, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.805
+  m_Volume: 0.573
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -954,14 +956,49 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782135126}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.358612, y: 3.2584827, z: -0.11259516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1060061394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &782135129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782135126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1f7ff4939d3cc4da82a5807a006c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &782135130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782135126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dabcd2fccb07bc42a7c8702ef3d9d4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Source: {fileID: 1060061393}
+  Click: {fileID: 8300000, guid: ecc1c4d1c8db63e46b33b368cb8bf4f1, type: 3}
+  Notifiy: {fileID: 8300000, guid: 7ae542887061b69439e1ee6ceb79039a, type: 3}
+  collect: {fileID: 8300000, guid: 52ccc088c9d4a76429ab0bce0caa136b, type: 3}
+  GrowSeeds: {fileID: 8300000, guid: d202fc453eac89743b812517384aea8f, type: 3}
+  KillEnemy: {fileID: 8300000, guid: 3b9ff330f60a1f14b98de3e78b14cab0, type: 3}
+  Warning: {fileID: 8300000, guid: ebcc2be461c01de49867f06aaab46929, type: 3}
+  Lose: {fileID: 8300000, guid: 1725f55611dc10244ae6fd89278f8bab, type: 3}
+  Damage: {fileID: 8300000, guid: 1a7bcd24280c9e54bbcf852beaa4126a, type: 3}
+  Scream: {fileID: 8300000, guid: 729aadc307aac1d40883382608499de5, type: 3}
 --- !u!1 &878472757
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,7 +1009,6 @@ GameObject:
   m_Component:
   - component: {fileID: 878472759}
   - component: {fileID: 878472758}
-  - component: {fileID: 878472760}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -995,7 +1031,7 @@ MonoBehaviour:
   SoundON: {fileID: 1818260723}
   SoundOFF: {fileID: 66679979}
   Audio: {fileID: 782135127}
-  Effect: {fileID: 878472760}
+  Effect: {fileID: 1060061393}
   Text: {fileID: 449836479}
   GameName: 1 Plant 4 Trees
   typingSpeed: 0.25
@@ -1014,18 +1050,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &878472760
+--- !u!1 &1060061392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1060061394}
+  - component: {fileID: 1060061393}
+  m_Layer: 0
+  m_Name: Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1060061393
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 878472757}
+  m_GameObject: {fileID: 1060061392}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ecc1c4d1c8db63e46b33b368cb8bf4f1, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1110,6 +1163,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &1060061394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060061392}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 782135128}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1449543243
 GameObject:
   m_ObjectHideFlags: 0
